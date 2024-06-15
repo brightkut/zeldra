@@ -18,6 +18,6 @@ mvn archetype:generate \
 
 [Video Maven Archetype](https://www.youtube.com/watch?v=NBimK5qFy3E)
 
-[Github Source Reference](https://github.com/ByteProgramming/CustomMavenArchetype)
+[GitHub Source Reference](https://github.com/ByteProgramming/CustomMavenArchetype)
 
 [Maven Official Documentation](https://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html)
