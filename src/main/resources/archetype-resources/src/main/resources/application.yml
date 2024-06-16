@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: ${artifactId}
+
+server:
+  port: ${port}
+  servlet:
+    context-path: ${contextPath}

@@ -1,0 +1,53 @@
+<archetype-descriptor
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        name="zeldra-springboot-archetype">
+
+  <!-- Setup Properties -->
+  <requiredProperties>
+    <requiredProperty key = "groupId">
+      <!-- For default value if we want to modify you need to add -D<option>
+      when running mvn generate command -->
+      <defaultValue>com.brightkut</defaultValue>
+    </requiredProperty>
+    <requiredProperty key = "artifactId"/>
+    <requiredProperty key = "version">
+      <defaultValue>1.0</defaultValue>
+    </requiredProperty>
+    <requiredProperty key = "port">
+      <defaultValue>8088</defaultValue>
+    </requiredProperty>
+    <requiredProperty key = "contextPath">
+      <defaultValue>/</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+
+  <!-- Configure file that we use to build archetype-->
+  <fileSets>
+    <!-- (1) filtered="false" it use normal value when we have ${groupId} It will not replace
+         but if filtered="true" it will replace from archetype.properties.
+
+         (2) packaged="true" it will restructure project depend on package
+    -->
+    <fileSet filtered="false" packaged="false">
+      <!-- It will not include not-include.txt file in archetype -->
+      <excludes>
+        <exclude>not-include.txt</exclude>
+      </excludes>
+    </fileSet>
+
+    <fileSet filtered="false" packaged="false">
+      <directory>src/main/java</directory>
+    </fileSet>
+
+    <fileSet filtered="true" packaged="false">
+      <directory>src/main/resources</directory>
+    </fileSet>
+
+    <fileSet filtered="false" packaged="true">
+      <directory>src/test/java</directory>
+    </fileSet>
+
+  </fileSets>
+
+</archetype-descriptor>
