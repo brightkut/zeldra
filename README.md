@@ -6,7 +6,7 @@
 
 ```
 mvn archetype:generate \
-    -DarchetypeGroupId=com.brightkut \
+    -DarchetypeGroupId=${package} \
     -DarchetypeArtifactId=zeldra \
     -DarchetypeVersion=1.0-SNAPSHOT \
     -DgroupId=<your-group-id> \

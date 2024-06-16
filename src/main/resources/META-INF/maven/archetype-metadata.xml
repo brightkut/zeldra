@@ -6,19 +6,27 @@
   <!-- Setup Properties -->
   <requiredProperties>
     <requiredProperty key = "groupId">
+      <description>Please enter the group id for your project (e.g., com.example):</description>
+    </requiredProperty>
+    <requiredProperty key = "artifactId">
+      <description>Please enter the artifact id for your project (e.g., sample-service):</description>
+    </requiredProperty>
+    <requiredProperty key = "version">
       <!-- For default value if we want to modify you need to add -D<option>
       when running mvn generate command -->
-      <defaultValue>com.brightkut</defaultValue>
-    </requiredProperty>
-    <requiredProperty key = "artifactId"/>
-    <requiredProperty key = "version">
       <defaultValue>1.0</defaultValue>
     </requiredProperty>
     <requiredProperty key = "port">
-      <defaultValue>8088</defaultValue>
     </requiredProperty>
     <requiredProperty key = "contextPath">
       <defaultValue>/</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="package">
+      <!-- Customize message that display to user -->
+      <description>Please enter the base package for your project (e.g., com.example.project):</description>
+    </requiredProperty>
+    <requiredProperty key="className">
+      <description>Please enter the main class name for your project (e.g., MyNewClass):</description>
     </requiredProperty>
   </requiredProperties>
 
@@ -36,7 +44,7 @@
       </excludes>
     </fileSet>
 
-    <fileSet filtered="false" packaged="false">
+    <fileSet filtered="true" packaged="false">
       <directory>src/main/java</directory>
     </fileSet>
 
@@ -44,7 +52,7 @@
       <directory>src/main/resources</directory>
     </fileSet>
 
-    <fileSet filtered="false" packaged="true">
+    <fileSet filtered="true" packaged="true">
       <directory>src/test/java</directory>
     </fileSet>
 
