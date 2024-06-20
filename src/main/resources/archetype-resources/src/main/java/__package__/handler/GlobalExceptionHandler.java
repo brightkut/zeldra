@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(NotImplementException.class)
-    public ResponseEntity<String> handleException(Exception ex, HttpServletRequest request) {
+    public ResponseEntity<String> handleException(NotImplementException ex) {
         return ResponseEntity
-                .internalServerError()
-                .body("Some part of code did not implement");
+                .ok()
+                .body(ex.getMessage());
     }
 }

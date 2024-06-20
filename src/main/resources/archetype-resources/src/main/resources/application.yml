@@ -1,8 +1,32 @@
 spring:
   application:
     name: ${artifactId}
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    driver-class-name: org.postgresql.Driver
+    username: myuser
+    password: secret
+    hikari:
+      connection-timeout: 5000
+      idle-timeout: 300000
+      max-lifetime: 900000
+      maximum-pool-size: 10
+      minimum-idle: 10
+      pool-name: ConPool
+  jpa:
+    hibernate:
+      connection:
+        provider_class: com.zaxxer.hikari.hibernate.HikariConnectionProvider
+      ddl-auto: create-drop
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 
 server:
   port: ${port}
   servlet:
     context-path: ${contextPath}
+
+

@@ -4,19 +4,9 @@
 package ${package}.repository;
 
 import ${package}.entity.${className};
-import ${package}.exception.NotImplementException;
-import org.springframework.stereotype.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Service
-public class ${className}Repository {
+import java.util.UUID;
 
-    public ${className} getById(Integer id) {
-        // TO DO
-        throw new NotImplementException("This class did not implement");
-    }
-
-    public void insert(${className} ${className.toLowerCase()}) {
-        // TO DO
-        throw new NotImplementException("This class did not implement");
-    }
+public interface ${className}Repository extends JpaRepository<${className}, UUID> {
 }

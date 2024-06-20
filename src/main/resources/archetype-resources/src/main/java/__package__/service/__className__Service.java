@@ -3,10 +3,14 @@
 #set( $symbol_escape = '\' )
 package ${package}.service;
 
-import ${package}.dto.ProductRequest;
-import ${package}.entity.Product;
-import ${package}.repository.ProductRepository;
+import ${package}.dto.${className}CreateRequest;
+import ${package}.dto.${className}UpdateRequest;
+import ${package}.entity.${className};
+import ${package}.repository.${className}Repository;
+import ${package}.exception.NotImplementException;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 public class ${className}Service {
@@ -17,19 +21,19 @@ public class ${className}Service {
         this.${className.toLowerCase()}Repository = ${className.toLowerCase()}Repository;
     }
 
-    public ${className} get${className}ById(Integer id) {
-        return ${className.toLowerCase()}Repository.getById(id);
+    public ${className} get${className}ById(UUID id) {
+        throw new NotImplementException("This service class does not implement.");
     }
 
-    public ${className} create${className}(${className}Request request) {
-        ${className} ${className.toLowerCase()} = new ${className}()
-                .setId("1")
-                .setName(request.getName())
-                .setPrice(request.getPrice())
-                .setType("PRODUCT_TYPE_A");
+    public ${className} create${className}(${className}CreateRequest request) {
+        throw new NotImplementException("This service class does not implement.");
+    }
 
-        ${className.toLowerCase()}Repository.insert(${className.toLowerCase()});
+    public ${className} update${className}(${className}UpdateRequest request) {
+        throw new NotImplementException("This service class does not implement.");
+    }
 
-        return ${className.toLowerCase()};
+    public ${className} delete${className}(UUID id) {
+        throw new NotImplementException("This service class does not implement.");
     }
 }
