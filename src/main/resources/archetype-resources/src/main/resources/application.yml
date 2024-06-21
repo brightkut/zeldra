@@ -16,13 +16,12 @@ spring:
       pool-name: ConPool
   jpa:
     hibernate:
-      connection:
-        provider_class: com.zaxxer.hikari.hibernate.HikariConnectionProvider
       ddl-auto: create-drop
-      show-sql: true
     properties:
+      connection.provider_class: com.zaxxer.hikari.hibernate.HikariConnectionProvider
       hibernate:
         format_sql: true
+    show-sql: true
 
 server:
   port: ${port}

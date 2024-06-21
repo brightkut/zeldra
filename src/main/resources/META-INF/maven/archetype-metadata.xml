@@ -6,7 +6,7 @@
   <!-- Setup Properties -->
   <requiredProperties>
     <requiredProperty key = "groupId">
-      <description>Please enter the group id for your project (e.g., com.example):</description>
+      <defaultValue>com.brightkut</defaultValue>
     </requiredProperty>
     <requiredProperty key = "artifactId">
       <description>Please enter the artifact id for your project (e.g., sample-service):</description>
@@ -22,8 +22,7 @@
       <defaultValue>/</defaultValue>
     </requiredProperty>
     <requiredProperty key="package">
-      <!-- Customize message that display to user -->
-      <description>Please enter the base package for your project (e.g., com.example.project):</description>
+      <defaultValue>${groupId.replace("-","").replace("_","").toLowerCase()}.${artifactId.replace("-","").replace("_","").replace(".","").toLowerCase()}</defaultValue>
     </requiredProperty>
     <requiredProperty key="className">
       <description>Please enter the main class name for your project (e.g., MyNewClass):</description>
@@ -37,8 +36,8 @@
 
          (2) packaged="true" it will restructure project depend on package
     -->
-    <fileSet>
-      <directory>.</directory>
+    <fileSet filtered="true" packaged="false" encoding="UTF-8">
+      <directory/>
       <!-- It will not include not-include.txt file in archetype -->
       <excludes>
         <exclude>not-include.txt</exclude>
@@ -49,18 +48,17 @@
       </includes>
     </fileSet>
 
-    <fileSet filtered="true" packaged="true">
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/main/java</directory>
     </fileSet>
 
-    <fileSet filtered="true" packaged="true">
-      <directory>src/main/resources</directory>
-    </fileSet>
-
-    <fileSet filtered="true" packaged="true">
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/test/java</directory>
     </fileSet>
 
+    <fileSet filtered="true">
+      <directory>src/main/resources</directory>
+    </fileSet>
   </fileSets>
 
 </archetype-descriptor>
