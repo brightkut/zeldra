@@ -17,36 +17,36 @@ mvn archetype:generate \
 ├── compose.yaml
 ├── pom.xml
 ├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── brightkut
-│   │   │           └── $package
-│   │   │               ├── SampleSpringbootApplication.java
-│   │   │               ├── controller
-│   │   │               │   └── SampleController.java
-│   │   │               ├── dto
-│   │   │               │   ├── SampleCreateRequest.java
-│   │   │               │   ├── SampleResponse.java
-│   │   │               │   └── SampleUpdateRequest.java
-│   │   │               ├── entity
-│   │   │               │   └── Sample.java
-│   │   │               ├── exception
-│   │   │               │   └── NotImplementException.java
-│   │   │               ├── handler
-│   │   │               │   └── GlobalExceptionHandler.java
-│   │   │               ├── repository
-│   │   │               │   └── SampleRepository.java
-│   │   │               └── service
-│   │   │                   └── SampleService.java
-│   │   └── resources
-│   │       └── application.yml
-│   └── test
-│       └── java
-│           └── com
-│               └── brightkut
-│                   └── $package
-│                       └── SampleSpringbootApplicationTests.java
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── brightkut
+    │   │           └── $package
+    │   │               ├── SampleSpringbootApplication.java
+    │   │               ├── controller
+    │   │               │   └── SampleController.java
+    │   │               ├── dto
+    │   │               │   ├── SampleCreateRequest.java
+    │   │               │   ├── SampleResponse.java
+    │   │               │   └── SampleUpdateRequest.java
+    │   │               ├── entity
+    │   │               │   └── Sample.java
+    │   │               ├── exception
+    │   │               │   └── NotImplementException.java
+    │   │               ├── handler
+    │   │               │   └── GlobalExceptionHandler.java
+    │   │               ├── repository
+    │   │               │   └── SampleRepository.java
+    │   │               └── service
+    │   │                   └── SampleService.java
+    │   └── resources
+    │       └── application.yml
+    └── test
+        └── java
+            └── com
+                └── brightkut
+                    └── $package
+                        └── SampleSpringbootApplicationTests.java
 ```
 
 ## Reference
