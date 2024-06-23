@@ -16,37 +16,43 @@ mvn archetype:generate \
 .
 ├── compose.yaml
 ├── pom.xml
-├── src
+└── src
     ├── main
-    │   ├── java
-    │   │   └── com
-    │   │       └── brightkut
-    │   │           └── $package
-    │   │               ├── SampleSpringbootApplication.java
-    │   │               ├── controller
-    │   │               │   └── SampleController.java
-    │   │               ├── dto
-    │   │               │   ├── SampleCreateRequest.java
-    │   │               │   ├── SampleResponse.java
-    │   │               │   └── SampleUpdateRequest.java
-    │   │               ├── entity
-    │   │               │   └── Sample.java
-    │   │               ├── exception
-    │   │               │   └── NotImplementException.java
-    │   │               ├── handler
-    │   │               │   └── GlobalExceptionHandler.java
-    │   │               ├── repository
-    │   │               │   └── SampleRepository.java
-    │   │               └── service
-    │   │                   └── SampleService.java
-    │   └── resources
-    │       └── application.yml
+    │ ├── java
+    │ │ └── com
+    │ │     └── brightkut
+    │ │         └── $artifactId
+    │ │             ├── SampleSpringbootApplication.java
+    │ │             ├── controller
+    │ │             │ └── SampleController.java
+    │ │             ├── dto
+    │ │             │ ├── SampleCreateRequest.java
+    │ │             │ ├── SampleResponse.java
+    │ │             │ └── SampleUpdateRequest.java
+    │ │             ├── entity
+    │ │             │ └── Sample.java
+    │ │             ├── exception
+    │ │             │ └── NotImplementException.java
+    │ │             ├── handler
+    │ │             │ └── GlobalExceptionHandler.java
+    │ │             ├── repository
+    │ │             │ └── SampleRepository.java
+    │ │             └── service
+    │ │                 └── SampleService.java
+    │ └── resources
+    │     └── application.yml
     └── test
         └── java
             └── com
                 └── brightkut
-                    └── $package
-                        └── SampleSpringbootApplicationTests.java
+                    └── $artifactId
+                        ├── controller
+                        │ └── SampleControllerTest.java
+                        ├── repository
+                        │ └── SampleRepositoryTest.java
+                        └── service
+                            └── SampleServiceTest.java
+
 ```
 
 ## Reference
