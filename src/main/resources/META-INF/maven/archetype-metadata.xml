@@ -6,7 +6,6 @@
   <!-- Setup Properties -->
   <requiredProperties>
     <requiredProperty key = "groupId">
-      <defaultValue>com.brightkut</defaultValue>
     </requiredProperty>
     <requiredProperty key = "artifactId">
       <description>Please enter the artifact id for your project (e.g., sample-service):</description>
