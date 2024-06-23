@@ -31,11 +31,11 @@ public class ${className}ControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private ${className}Service ${className.toLowerCase()}Service;
-
     @Autowired
     private ObjectMapper objectMapper;
+
+    @MockBean
+    private ${className}Service ${className.toLowerCase()}Service;
 
     private final String PRODUCT_ENDPOINT = "/${className.toLowerCase()}s";
 
@@ -48,7 +48,7 @@ public class ${className}ControllerTest {
 
     /* Get ${className} Cases */
     @Test
-    public void testGet${className}Success() throws Exception {
+     void testGet${className}Success() throws Exception {
         when(${className.toLowerCase()}Service.get${className}ById(any(UUID.class))).thenReturn(new ${className}Response().setId(mockId));
 
         mockMvc.perform(get(PRODUCT_ENDPOINT+"/{id}", mockId))
@@ -58,7 +58,7 @@ public class ${className}ControllerTest {
     }
 
     @Test
-    public void testGet${className}Failed_BadRequest() throws Exception {
+     void testGet${className}Failed_BadRequest() throws Exception {
         mockMvc.perform(get(PRODUCT_ENDPOINT+"/{id}", "abc"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -66,7 +66,7 @@ public class ${className}ControllerTest {
     }
 
     @Test
-    public void testGet${className}Failed_InternalError() throws Exception {
+     void testGet${className}Failed_InternalError() throws Exception {
         when(${className.toLowerCase()}Service.get${className}ById(any(UUID.class))).thenThrow(new NotImplementException("Internal Error"));
 
         mockMvc.perform(get(PRODUCT_ENDPOINT+"/{id}", mockId))
@@ -77,7 +77,7 @@ public class ${className}ControllerTest {
 
     /* Create ${className} Cases */
     @Test
-    public void testCreate${className}Success() throws Exception {
+     void testCreate${className}Success() throws Exception {
         ${className}CreateRequest request = new ${className}CreateRequest().setId(mockId);
 
         when(${className.toLowerCase()}Service.create${className}(any(${className}CreateRequest.class))).thenReturn(new ${className}Response().setId(mockId));
@@ -92,7 +92,7 @@ public class ${className}ControllerTest {
     }
 
     @Test
-    public void testCreate${className}Failed_InternalError() throws Exception {
+     void testCreate${className}Failed_InternalError() throws Exception {
         ${className}CreateRequest request = new ${className}CreateRequest();
 
         when(${className.toLowerCase()}Service.create${className}(any(${className}CreateRequest.class))).thenThrow(new NotImplementException("Internal Error"));
@@ -108,7 +108,7 @@ public class ${className}ControllerTest {
 
     /* Update ${className} Cases */
     @Test
-    public void testUpdate${className}Success() throws Exception {
+     void testUpdate${className}Success() throws Exception {
         ${className}UpdateRequest request = new ${className}UpdateRequest();
 
         when(${className.toLowerCase()}Service.update${className}(any(${className}UpdateRequest.class))).thenReturn(new ${className}Response().setId(mockId));
@@ -123,7 +123,7 @@ public class ${className}ControllerTest {
     }
 
     @Test
-    public void testUpdate${className}Failed_InternalError() throws Exception {
+     void testUpdate${className}Failed_InternalError() throws Exception {
         ${className}UpdateRequest request = new ${className}UpdateRequest();
 
         when(${className.toLowerCase()}Service.update${className}(any(${className}UpdateRequest.class))).thenThrow(new NotImplementException("Internal Error"));
@@ -138,7 +138,7 @@ public class ${className}ControllerTest {
 
     /* Delete ${className} Cases */
     @Test
-    public void testDelete${className}Success() throws Exception {
+     void testDelete${className}Success() throws Exception {
         when(${className.toLowerCase()}Service.delete${className}(any(UUID.class))).thenReturn(new ${className}Response().setId(mockId));
 
         mockMvc.perform(delete(PRODUCT_ENDPOINT+"/{id}", mockId))
@@ -149,7 +149,7 @@ public class ${className}ControllerTest {
     }
 
     @Test
-    public void testDelete${className}Failed_BadRequest() throws Exception {
+     void testDelete${className}Failed_BadRequest() throws Exception {
         mockMvc.perform(delete(PRODUCT_ENDPOINT+"/{id}", "abc"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -158,7 +158,7 @@ public class ${className}ControllerTest {
     }
 
     @Test
-    public void testDelete${className}Failed_InternalError() throws Exception {
+     void testDelete${className}Failed_InternalError() throws Exception {
         when(${className.toLowerCase()}Service.delete${className}(any(UUID.class))).thenThrow(new NotImplementException("Internal Error"));
 
         mockMvc.perform(delete(PRODUCT_ENDPOINT+"/{id}", mockId))
