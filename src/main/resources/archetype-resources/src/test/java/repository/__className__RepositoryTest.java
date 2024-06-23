@@ -37,7 +37,7 @@ public class ${className}RepositoryTest {
         ${className} ${className.toLowerCase()} = new ${className}().setId(UUID.randomUUID());
 
         // Insert
-        ${className} insert${className} = ${className.toLowerCase()}Repository.save(${className.toLowerCase()};
+        ${className} insert${className} = ${className.toLowerCase()}Repository.save(${className.toLowerCase()});
         assertNotNull(insert${className});
 
         // Get
