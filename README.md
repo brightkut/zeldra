@@ -11,6 +11,17 @@ mvn archetype:generate \
     -DarchetypeVersion=1.0-SNAPSHOT 
 ```
 
+or 
+
+Download this dependency and running generate
+```
+<dependency>
+    <groupId>io.github.brightkut</groupId>
+    <artifactId>zeldra</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 ### Project Structure Tree
 ```
 .
@@ -54,6 +65,9 @@ mvn archetype:generate \
                             └── SampleServiceTest.java
 
 ```
+
+## Maven Central Repository
+https://central.sonatype.com/artifact/io.github.brightkut/zeldra/overview
 
 ## Reference
 
