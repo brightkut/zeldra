@@ -26,6 +26,9 @@
     <requiredProperty key="className">
       <description>Please enter the main class name for your project (e.g., MyNewClass):</description>
     </requiredProperty>
+<!--    <requiredProperty key="className2">-->
+<!--      <description>Please enter the main class name for your project (e.g., MyNewClass):</description>-->
+<!--    </requiredProperty>-->
   </requiredProperties>
 
   <!-- Configure file that we use to build archetype-->

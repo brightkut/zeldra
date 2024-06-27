@@ -6,9 +6,9 @@
 
 ```
 mvn archetype:generate \
-    -DarchetypeGroupId=com.brightkut \
+    -DarchetypeGroupId=io.github.brightkut \
     -DarchetypeArtifactId=zeldra \
-    -DarchetypeVersion=1.0-SNAPSHOT 
+    -DarchetypeVersion=1.0 
 ```
 
 or 

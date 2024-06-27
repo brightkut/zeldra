@@ -82,6 +82,16 @@
       <artifactId>postgresql</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- Condition for pom.xml -->
+<!--#if (${className2} == "true")-->
+<!--    <dependency>-->
+<!--      <groupId>com.example</groupId>-->
+<!--      <artifactId>special-dependency</artifactId>-->
+<!--      <version>1.0.0</version>-->
+<!--    </dependency>-->
+<!--    #end-->
+
   </dependencies>
 
   <build>
