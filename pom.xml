@@ -2,11 +2,68 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <!-- we can use this groupId to search in ~/.m2/repository/com/brightkut -->
-  <groupId>com.brightkut</groupId>
+  <groupId>io.github.brightkut</groupId>
   <!-- project archetype name -->
   <artifactId>zeldra</artifactId>
   <!-- Learn archetype version -->
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>Archetype - zeldra</name>
-  <url>http://maven.apache.org</url>
+  <description>This is archetype for spring boot project</description>
+  <packaging>jar</packaging>
+
+  <url>https://github.com/brightkut/zeldra</url>
+
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Disorn Thitikornkovit</name>
+      <email>dsorn2@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/brightkut/zeldra.git</connection>
+    <developerConnection>scm:git:ssh://github.com:brightkut/zeldra.git</developerConnection>
+    <url>https://github.com/brightkut/zeldra.git</url>
+  </scm>
+
+  <!-- Add to publish to maven central -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.5.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+          <autoPublish>true</autoPublish>
+          <waitUntil>published</waitUntil>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
