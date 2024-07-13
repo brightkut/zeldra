@@ -4,6 +4,10 @@
  
 ### Command To Use
 
+1. Clone this repository
+2. Running `mvn clean install` and verify installed dependency in `~/.m2/repository/io/github/brightkut/zeldra`
+
+3. Running command  
 ```
 mvn archetype:generate \
     -DarchetypeGroupId=io.github.brightkut \
@@ -11,15 +15,15 @@ mvn archetype:generate \
     -DarchetypeVersion=1.0 
 ```
 
-or 
+4. Input this field in this format when running generated command
 
-Download this dependency and running generate
 ```
-<dependency>
-    <groupId>io.github.brightkut</groupId>
-    <artifactId>zeldra</artifactId>
-    <version>1.0</version>
-</dependency>
+--- Example ---
+'groupId': com.disorn
+'artifactId': sample-service
+'port': 8089
+'className': Sample
+'package': com.disorn.sampleservice 
 ```
 
 ### Project Structure Tree
